@@ -14,6 +14,10 @@ public class Boat {
         this.Agility = Agility;
     }
 
+    public void setHoldability(Integer Holdability) {
+        this.Holdability = Holdability;
+    }
+
     public void setCargo(Item[] Cargo) {
         this.Cargo = Cargo;
     }

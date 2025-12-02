@@ -14,7 +14,18 @@ public class IsHolding extends Action {
         super(Human);
         this.Human = Human;
         this.Items = Items;
+        for (Item Item : Human.getItems()) {
+            switch (Item.getWeight()) {
+                case "маленький" -> HoldAbility += 1;
+                case "средний" -> HoldAbility += 2;
+                case "большой" -> HoldAbility += 5;
+                case "очень большой" -> HoldAbility += 11;
+            }
+        }
+        ItemsToHold = Human.getItems();
     }
+
+    //добавить проверку на уже держание предметов
 
     public Item[] Hold() {
         for (Item Item : Items) {

@@ -22,5 +22,7 @@ public class Main {
         if (OldRaft.getAgility() < Raft.getAgility()) {
             System.out.println("плот более поворотливый, чем предыдущий");
         } else {System.out.println("плот менее поворотливый, чем предыдущий");}
+        Item[] Hold = new IsHolding(I, new Item[] {Hammer, BagOfNails, Lom}).Hold();
+        System.out.println(Hold);
     }
 }

@@ -4,6 +4,8 @@ import Boat.*;
 import Human.*;
 import Item.*;
 
+import java.util.Arrays;
+
 public class IsLoading extends Action {
     public Boat Boat;
     public Human Human;
@@ -19,6 +21,7 @@ public class IsLoading extends Action {
         Items = Human.getItems();
         HoldAbility = Boat.getHoldability();
         Mood = Human.getMood();
+        ItemsToTransport = Boat.getCargo();
     }
 
     public Item[] Loading() throws InterruptedException {
@@ -37,11 +40,15 @@ public class IsLoading extends Action {
                     Mood += 0.1;
                     Human.setMood(Mood);
                     super.setWhatActionsAreDone("погрузил вещи");
+                    Boat.setHoldability(HoldAbility);
+                    Human.setItems(Arrays.copyOfRange(Items, ItemsToTransport.length - 1, Items.length));
                     return ItemsToTransport;
                 } else if ((-1 < HoldAbility) && (HoldAbility < 0)) {
                     Boat.setCargo(ItemsToTransport);
                     Human.setMood(Mood);
                     super.setWhatActionsAreDone("погрузил вещи");
+                    Boat.setHoldability(HoldAbility);
+                    Human.setItems(Arrays.copyOfRange(Items, ItemsToTransport.length - 1, Items.length));
                     return ItemsToTransport;
                 } else {
                     System.out.println(Boat.Sinking());
@@ -53,6 +60,8 @@ public class IsLoading extends Action {
             Boat.setCargo(ItemsToTransport);
             Human.setMood(Mood);
             super.setWhatActionsAreDone("погрузил вещи");
+            Boat.setHoldability(HoldAbility);
+            Human.setItems(new Item[0]);
             return ItemsToTransport;
     }
 

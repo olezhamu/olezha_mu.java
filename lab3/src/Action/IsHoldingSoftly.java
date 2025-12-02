@@ -13,6 +13,14 @@ public class IsHoldingSoftly extends IsHolding{
         super(Human, Items);
         this.Human = Human;
         this.Items = Items;
+        for (Item Item : Human.getItems()) {
+            switch (Item.getWeight()) {
+                case "маленький" -> HoldAbility += 1;
+                case "средний" -> HoldAbility += 2;
+                case "большой" -> HoldAbility += 5;
+            }
+        }
+        ItemsToHold = Human.getItems();
     }
 
     @Override

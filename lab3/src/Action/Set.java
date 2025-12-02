@@ -7,9 +7,11 @@ import Item.*;
 public class Set {
     public Human Human;
     public Item[] Items;
+    public Boat Boat;
 
-    public Set(Human Human, Item[] Items) {
+    public Set(Human Human, Item[] Items, Boat Boat) {
         this.Human = Human;
         this.Items = Items;
+        this.Boat = Boat;
     }
 }

@@ -4,7 +4,7 @@ import Item.*;
 
 public class Human {
     public String Name;
-    public Item[] Items;
+    public Item[] Items = new Item[0];
     public Double Mood = 5.0;
 
     public Human(String Name, Item[] Items) {
