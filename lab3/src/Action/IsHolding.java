@@ -25,8 +25,6 @@ public class IsHolding extends Action {
         ItemsToHold = Human.getItems();
     }
 
-    //добавить проверку на уже держание предметов
-
     public Item[] Hold() {
         for (Item Item : Items) {
             switch (Item.getWeight()){
