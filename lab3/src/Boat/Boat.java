@@ -2,7 +2,7 @@ package Boat;
 
 import Item.*;
 
-public class Boat {
+public class Boat implements Sail{
     public String Name;
     public Integer Holdability;
     public Integer Agility;
@@ -40,5 +40,10 @@ public class Boat {
 
     public Item[] getCargo(){
         return Cargo;
+    }
+
+    @Override
+    public String Sail() {
+        return "судно идет под парусом";
     }
 }
