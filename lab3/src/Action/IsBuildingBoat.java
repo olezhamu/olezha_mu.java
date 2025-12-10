@@ -22,11 +22,6 @@ public class IsBuildingBoat extends Action{
         System.out.println(Human.getName() + " построил " + Name);
         Human.setMood(Human.getMood()+1.0);
         super.setWhatActionsAreDone("построен/а/о " + Name);
-        switch (Name) {
-            case "судно" -> {return new Boat(Name, Agility, HoldAbility);}
-            case "корабль" -> {return new Ship(Name, Agility, HoldAbility);}
-            case "плот" -> {return new Raft(Name, Agility, HoldAbility);}
-        }
         return new Boat(Name, Agility, HoldAbility);
     }
 

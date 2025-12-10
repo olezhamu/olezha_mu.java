@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/alb3/alb3.iml" filepath="$PROJECT_DIR$/alb3/alb3.iml" />
       <module fileurl="file://$PROJECT_DIR$/j,extybt.iml" filepath="$PROJECT_DIR$/j,extybt.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab2/lab2.iml" filepath="$PROJECT_DIR$/lab2/lab2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alb3/lab3.iml" filepath="$PROJECT_DIR$/alb3/lab3.iml" />
     </modules>
   </component>
 </project>

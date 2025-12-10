@@ -18,7 +18,7 @@ public class Main {
         Human I = new Human("Я", new Item[0]);
         System.out.println(new IsClimbing(I, "веревка", "корабль").Climb());
         Boat Raft = new IsBuildingBoat(I, "плот", 10, 10).BuildBoat();
-        Raft OldRaft = new Raft("старый плот", 9, 9);
+        Boat OldRaft = new Boat("старый плот", 9, 9);
         if (OldRaft.getAgility() < Raft.getAgility()) {
             System.out.println("плот более поворотливый, чем предыдущий");
         } else {System.out.println("плот менее поворотливый, чем предыдущий");}
