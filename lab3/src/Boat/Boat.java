@@ -8,7 +8,7 @@ public class Boat implements Sail{
     public String Name;
     public Integer Holdability;
     public Integer Agility;
-    public ArrayList<Item> Cargo;
+    public ArrayList<Item> Cargo = new ArrayList<Item>(0);
 
     public Boat(String Name, Integer Agility, Integer HoldAbility){
         this.Name = Name;

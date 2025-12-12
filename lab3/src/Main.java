@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws InterruptedException {
         Item Hammer = new Item("молоток", "небольшой", "1", "маленький", "дерево");
         Item BagOfNails = new Bag("гвозди", "небольшой", "2 или 3", "маленький", "железный");
         Item Lom = new Item("лом", "средний", "3", "средний", "железный");
@@ -19,16 +19,10 @@ public class Main {
         if (OldRaft.getAgility() < Raft.getAgility()) {
             System.out.println("плот более поворотливый, чем предыдущий");
         } else {System.out.println("плот менее поворотливый, чем предыдущий");}
-
-
-
-        new IsHolding(I, new ArrayList<Item>(Arrays.asList(Hammer, BagOfNails, Lom))).Hold();
-        System.out.println(I.WhatsOwn());
-
-        I.setItems(new ArrayList<Item>(0));
-
         Set Set = new Set(I, new ArrayList<Item>(Arrays.asList(Hammer, BagOfNails, Lom)), Raft);
         Set.Hold();
-        System.out.println(I.WhatsOwn());
+        Set.Load();
+        Set.Transport();
+        Set.Unload();
     }
 }
