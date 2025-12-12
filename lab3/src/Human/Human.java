@@ -50,10 +50,10 @@ public class Human {
         return "настроение у " + Name + " " + s;
     }
 
-    public String[] WhatsOwn() {
-        String[] s = {Name + " владеет этими вещами:"};
+    public String WhatsOwn() {
+        String s = Name + " владеет этими вещами:\n";
         for (Item Item : Items) {
-            s[s.length] = Item.getMany() + " " + Item.getName() + ", Размер: " + Item.getVolume() + ", Вес: " + Item.getWeight() + ", Материал: " + Item.getMaterial();
+            s += Item.getMany() + " " + Item.getName() + ", Размер: " + Item.getVolume() + ", Вес: " + Item.getWeight() + ", Материал: " + Item.getMaterial() + ";\n";
         }
         return s;
     }

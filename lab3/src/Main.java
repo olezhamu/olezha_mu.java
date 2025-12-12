@@ -29,6 +29,6 @@ public class Main {
         List<Item> existingList = Arrays.asList(Hammer, BagOfNails, Lom);
         ArrayList<Item> ToHold = new ArrayList<>(existingList);
         ArrayList<Item> Hold = new IsHolding(I, ToHold).Hold();
-        System.out.println(Hold);
+        System.out.println(I.WhatsOwn());
     }
 }
