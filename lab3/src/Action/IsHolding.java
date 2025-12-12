@@ -1,16 +1,17 @@
 package Action;
 
-import Boat.*;
 import Human.*;
 import Item.*;
+
+import java.util.ArrayList;
 
 public class IsHolding extends Action {
     private Integer HoldAbility = 0;
     public Human Human;
-    public Item[] Items;
-    public Item[] ItemsToHold = new Item[0];
+    public ArrayList<Item> Items;
+    public ArrayList<Item> ItemsToHold;
 
-    public IsHolding(Human Human, Item[] Items) {
+    public IsHolding(Human Human, ArrayList<Item> Items) {
         super(Human);
         this.Human = Human;
         this.Items = Items;
@@ -25,7 +26,7 @@ public class IsHolding extends Action {
         ItemsToHold = Human.getItems();
     }
 
-    public Item[] Hold() {
+    public ArrayList<Item> Hold() {
         for (Item Item : Items) {
             switch (Item.getWeight()){
                 case "маленький" -> HoldAbility += 1;
@@ -34,10 +35,10 @@ public class IsHolding extends Action {
                 case "очень большой" -> HoldAbility += 11;
             }
             if (HoldAbility < 5) {
-                ItemsToHold[ItemsToHold.length] = Item;
+                ItemsToHold.add(Item);
                 Human.setMood(Human.getMood()+0.1);
             } else if (HoldAbility == 5) {
-                ItemsToHold[ItemsToHold.length] = Item;
+                ItemsToHold.add(Item);
                 Human.setItems(ItemsToHold);
                 Human.setMood(Human.getMood()+0.1);
                 super.setWhatActionsAreDone("взял вещи");
@@ -47,9 +48,9 @@ public class IsHolding extends Action {
                 super.setWhatActionsAreDone("взял вещи");
                 return ItemsToHold;
             }else {
-                Human.setItems(new Item[0]);
+                Human.setItems(new ArrayList<Item>(0));
                 Human.setMood(Human.getMood()-1.0);
-                return new Item[0];
+                return new ArrayList<Item>(0);
             }
         }
         Human.setItems(ItemsToHold);

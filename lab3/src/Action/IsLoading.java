@@ -4,15 +4,16 @@ import Boat.*;
 import Human.*;
 import Item.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class IsLoading extends Action {
     public Boat Boat;
     public Human Human;
-    public Item[] Items;
+    public ArrayList<Item> Items;
     public Integer HoldAbility;
     public Double Mood;
-    public Item[] ItemsToTransport = new Item[0];
+    public ArrayList<Item> ItemsToTransport;
 
     public IsLoading(Human Human, Boat Boat) {
         super(Human);
@@ -24,7 +25,7 @@ public class IsLoading extends Action {
         ItemsToTransport = Boat.getCargo();
     }
 
-    public Item[] Loading() throws InterruptedException {
+    public ArrayList<Item> Loading() throws InterruptedException {
             for (Item Item : Items) {
                 switch (Item.getWeight()) {
                     case "маленький" -> {HoldAbility -= 1;Thread.sleep(5000);}
@@ -32,36 +33,50 @@ public class IsLoading extends Action {
                     case "большой" -> {HoldAbility -= 5;Thread.sleep(10000);}
                 }
                 if (HoldAbility > 0) {
-                    ItemsToTransport[ItemsToTransport.length] = Item;
+                    ItemsToTransport.add(Item);
                     Mood += 0.1;
                 } else if (HoldAbility == 0) {
-                    ItemsToTransport[ItemsToTransport.length] = Item;
+                    ItemsToTransport.add(Item);
                     Boat.setCargo(ItemsToTransport);
                     Mood += 0.1;
                     Human.setMood(Mood);
                     super.setWhatActionsAreDone("погрузил вещи");
                     Boat.setHoldability(HoldAbility);
-                    Human.setItems(Arrays.copyOfRange(Items, ItemsToTransport.length - 1, Items.length));
+                    for (Item Item1 : Items) {
+                        if (ItemsToTransport.contains(Item1)) {
+                            continue;
+                        } else {
+                            Items.remove(Item1);
+                        }
+                    }
+                    Human.setItems(Items);
                     return ItemsToTransport;
                 } else if ((-1 < HoldAbility) && (HoldAbility < 0)) {
                     Boat.setCargo(ItemsToTransport);
                     Human.setMood(Mood);
                     super.setWhatActionsAreDone("погрузил вещи");
                     Boat.setHoldability(HoldAbility);
-                    Human.setItems(Arrays.copyOfRange(Items, ItemsToTransport.length - 1, Items.length));
+                    for (Item Item1 : Items) {
+                        if (ItemsToTransport.contains(Item1)) {
+                            continue;
+                        } else {
+                            Items.remove(Item1);
+                        }
+                    }
+                    Human.setItems(Items);
                     return ItemsToTransport;
                 } else {
                     System.out.println(Boat.Sinking());
                     Mood -= 2.0;
                     Human.setMood(Mood);
-                    return new Item[0];
+                    return new ArrayList<Item>(0);
                 }
             }
             Boat.setCargo(ItemsToTransport);
             Human.setMood(Mood);
             super.setWhatActionsAreDone("погрузил вещи");
             Boat.setHoldability(HoldAbility);
-            Human.setItems(new Item[0]);
+            Human.setItems(new ArrayList<Item>(0));
             return ItemsToTransport;
     }
 

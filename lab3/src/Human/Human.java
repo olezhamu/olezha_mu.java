@@ -2,18 +2,20 @@ package Human;
 
 import Item.*;
 
+import java.util.ArrayList;
+
 public class Human {
     public String Name;
-    public Item[] Items = new Item[0];
+    public ArrayList<Item> Items;
     public Double Mood = 5.0;
 
-    public Human(String Name, Item[] Items) {
+    public Human(String Name, ArrayList<Item> Items) {
         this.Name = Name;
         this.Items = Items;
     }
 
-    public void setItems(Item[] items) {
-        Items = items;
+    public void setItems(ArrayList<Item> Items) {
+        this.Items = Items;
     }
 
     public void setMood(Double Mood) {
@@ -24,7 +26,7 @@ public class Human {
         return Name;
     }
 
-    public Item[] getItems() {
+    public ArrayList<Item> getItems() {
         return Items;
     }
 

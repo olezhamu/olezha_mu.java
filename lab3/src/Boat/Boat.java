@@ -2,11 +2,13 @@ package Boat;
 
 import Item.*;
 
+import java.util.ArrayList;
+
 public class Boat implements Sail{
     public String Name;
     public Integer Holdability;
     public Integer Agility;
-    public Item[] Cargo;
+    public ArrayList<Item> Cargo;
 
     public Boat(String Name, Integer Agility, Integer HoldAbility){
         this.Name = Name;
@@ -18,7 +20,7 @@ public class Boat implements Sail{
         this.Holdability = Holdability;
     }
 
-    public void setCargo(Item[] Cargo) {
+    public void setCargo(ArrayList<Item> Cargo) {
         this.Cargo = Cargo;
     }
 
@@ -38,7 +40,7 @@ public class Boat implements Sail{
         return Holdability;
     }
 
-    public Item[] getCargo(){
+    public ArrayList<Item> getCargo(){
         return Cargo;
     }
 
