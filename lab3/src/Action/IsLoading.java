@@ -21,6 +21,13 @@ public class IsLoading extends Action {
         this.Human = Human;
         Items = Human.getItems();
         HoldAbility = Boat.getHoldability();
+        for (Item Item : Items) {
+            switch (Item.getWeight()) {
+                case "маленький" -> {HoldAbility -= 1;}
+                case "средний" -> {HoldAbility -= 2;}
+                case "большой" -> {HoldAbility -= 5;}
+            }
+        }
         Mood = Human.getMood();
         ItemsToTransport = Boat.getCargo();
     }
@@ -41,7 +48,6 @@ public class IsLoading extends Action {
                     Mood += 0.1;
                     Human.setMood(Mood);
                     super.setWhatActionsAreDone("погрузил вещи");
-                    Boat.setHoldability(HoldAbility);
                     for (Item Item1 : Items) {
                         if (ItemsToTransport.contains(Item1)) {
                             continue;
@@ -55,7 +61,6 @@ public class IsLoading extends Action {
                     Boat.setCargo(ItemsToTransport);
                     Human.setMood(Mood);
                     super.setWhatActionsAreDone("погрузил вещи");
-                    Boat.setHoldability(HoldAbility);
                     for (Item Item1 : Items) {
                         if (ItemsToTransport.contains(Item1)) {
                             continue;
@@ -75,7 +80,6 @@ public class IsLoading extends Action {
             Boat.setCargo(ItemsToTransport);
             Human.setMood(Mood);
             super.setWhatActionsAreDone("погрузил вещи");
-            Boat.setHoldability(HoldAbility);
             Human.setItems(new ArrayList<Item>(0));
             return ItemsToTransport;
     }

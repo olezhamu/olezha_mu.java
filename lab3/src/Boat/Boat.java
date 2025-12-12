@@ -16,10 +16,6 @@ public class Boat implements Sail{
         this.Agility = Agility;
     }
 
-    public void setHoldability(Integer Holdability) {
-        this.Holdability = Holdability;
-    }
-
     public void setCargo(ArrayList<Item> Cargo) {
         this.Cargo = Cargo;
     }

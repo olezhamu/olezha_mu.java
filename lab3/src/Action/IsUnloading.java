@@ -14,8 +14,16 @@ public class IsUnloading extends Action{
         this.Boat = Boat;
     }
 
-    public String Unloading() {
+    public String Unloading() throws InterruptedException {
         super.setWhatActionsAreDone(Boat.getName() + " разгружается");
+        Thread.sleep(1000);
+        for (Item Item : Boat.getCargo()) {
+            switch (Item.getWeight()) {
+                case "маленький" -> {Thread.sleep(5000);}
+                case "средний" -> {Thread.sleep(7500);}
+                case "большой" -> {Thread.sleep(10000);}
+            }
+        }
         Boat.setCargo(new ArrayList<Item>(0));
         return Boat.getName() + " разжгужается";
     }
