@@ -5,10 +5,10 @@ import Human.*;
 import Item.*;
 
 public class IsBuildingBoat extends Action{
-    public Human Human;
-    public String Name;
-    public Integer Agility;
-    public Integer HoldAbility;
+    private Human Human;
+    private String Name;
+    private Integer Agility;
+    private Integer HoldAbility;
 
     public IsBuildingBoat(Human Human, String Name, Integer Agility, Integer HoldAbility) {
         super(Human);

@@ -36,7 +36,7 @@ public class Main {
 
         Set Set = new Set(I, new ArrayList<Item>(Arrays.asList(BagOfNails, Lom)), Raft);
 
-        System.out.println(new IsClimbing(I, "веревка", "корабль").Climb());
+        new IsClimbing(I, "веревка", "корабль").Climb();
 
         if (OldRaft.getAgility() < Raft.getAgility()) {
             System.out.println("плот более поворотливый, чем предыдущий");

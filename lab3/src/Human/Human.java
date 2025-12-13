@@ -5,9 +5,9 @@ import Item.*;
 import java.util.ArrayList;
 
 public class Human {
-    public String Name;
-    public ArrayList<Item> Items;
-    public Double Mood = 5.0;
+    private String Name;
+    private ArrayList<Item> Items;
+    private Double Mood = 5.0;
 
     public Human(String Name, ArrayList<Item> Items) {
         this.Name = Name;
@@ -23,15 +23,18 @@ public class Human {
     }
 
     public String getName() {
-        return Name;
+        String s = Name;
+        return s;
     }
 
     public ArrayList<Item> getItems() {
-        return Items;
+        ArrayList<Item> s = Items;
+        return s;
     }
 
     public Double getMood() {
-        return Mood;
+        Double s = Mood;
+        return s;
     }
 
     public String HowFeel() {

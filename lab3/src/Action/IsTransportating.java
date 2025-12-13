@@ -4,7 +4,7 @@ import Boat.*;
 import Item.*;
 
 public class IsTransportating extends Action{
-    public Boat Boat;
+    private Boat Boat;
 
     public IsTransportating(Boat Boat) {
         super(Boat);
@@ -14,6 +14,7 @@ public class IsTransportating extends Action{
     public String Transportation() throws InterruptedException {
         super.setWhatActionsAreDone("перевёз груз");
         Thread.sleep((1/Boat.getAgility())*10000);
+        System.out.println(Boat.getName() + " перевозит груз");
         return Boat.getName() + " перевозит груз";
     }
 

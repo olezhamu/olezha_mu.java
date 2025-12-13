@@ -35,6 +35,6 @@ public class Set {
     }
 
     public void Unload() throws InterruptedException {
-        new IsUnloading(Boat).Unloading();
+        new IsUnloading(Human, Boat).Unloading();
     }
 }

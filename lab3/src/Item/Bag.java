@@ -1,7 +1,7 @@
 package Item;
 
 public class Bag extends Item{
-    public String NameWhatInside;
+    private String NameWhatInside;
 
     public Bag(String NameWhatInside, String Volume, String Many, Weight Weight, String Material) {
         super(NameWhatInside, Volume, Many, Weight, Material);

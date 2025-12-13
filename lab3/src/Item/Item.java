@@ -1,11 +1,11 @@
 package Item;
 
 public class Item {
-    public String Name;
-    public String Material;
-    public String Many;
-    public String Volume;
-    public String Weight;
+    protected String Name;
+    protected String Material;
+    protected String Many;
+    protected String Volume;
+    protected String Weight;
 
     public Item(String Name, String Volume, String Many, Weight Weight, String Material){
         this.Name = Name;
@@ -16,23 +16,28 @@ public class Item {
     }
 
     public String getName() {
-        return Name;
+        String s = Name;
+        return s;
     }
 
     public String getMany() {
-        return Many;
+        String s = Many;
+        return s;
     }
 
     public String getWeight() {
-        return Weight;
+        String s = Weight;
+        return s;
     }
 
     public String getMaterial() {
-        return Material;
+        String s = Material;
+        return s;
     }
 
     public String getVolume() {
-        return Volume;
+        String s = Volume;
+        return s;
     }
 
     public String getInfo() {

@@ -5,9 +5,9 @@ import Human.*;
 import Item.*;
 
 public abstract class Action {
-    public Human Human = null;
-    public Boat Boat = null;
-    public String WhatActionsAreDone = "";
+    private Human Human = null;
+    private Boat Boat = null;
+    private String WhatActionsAreDone = "";
 
     public Action(Human Human){
         this.Human = Human;

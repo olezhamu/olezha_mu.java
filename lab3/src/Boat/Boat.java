@@ -5,10 +5,10 @@ import Item.*;
 import java.util.ArrayList;
 
 public class Boat implements Sail{
-    public String Name;
-    public Integer Holdability;
-    public Integer Agility;
-    public ArrayList<Item> Cargo = new ArrayList<Item>(0);
+    private String Name;
+    private Integer Holdability;
+    private Integer Agility;
+    private ArrayList<Item> Cargo = new ArrayList<Item>(0);
 
     public Boat(String Name, Integer Agility, Integer HoldAbility){
         this.Name = Name;
@@ -25,19 +25,23 @@ public class Boat implements Sail{
     }
 
     public String getName() {
-        return Name;
+        String s = Name;
+        return s;
     }
 
     public Integer getAgility() {
-        return Agility;
+        Integer s = Agility;
+        return s;
     }
 
     public Integer getHoldability() {
-        return Holdability;
+        Integer s = Holdability;
+        return s;
     }
 
     public ArrayList<Item> getCargo(){
-        return Cargo;
+        ArrayList<Item> s = Cargo;
+        return s;
     }
 
     @Override

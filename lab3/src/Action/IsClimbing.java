@@ -5,9 +5,9 @@ import Human.*;
 import Item.Item;
 
 public class IsClimbing extends Action{
-    public Human Human;
-    public String Object;
-    public String Surface;
+    private Human Human;
+    private String Object;
+    private String Surface;
 
     public IsClimbing(Human Human, String Object, String Surface) {
         super(Human);
@@ -17,6 +17,7 @@ public class IsClimbing extends Action{
     }
 
     public String Climb() {
+        System.out.println(Human.getName() + " взбирается по " + Object + " на " + Surface);
         Human.setMood(Human.getMood()+0.1);
         super.setWhatActionsAreDone("взобрался на " + Surface);
         return Human.getName() + " взбирается по " + Object + " на " + Surface;
