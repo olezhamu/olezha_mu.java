@@ -32,7 +32,7 @@ public class IsUnloading extends Action{
     }
 
     @Override
-    public String getResult() {
+    public String toString() {
         return Boat.getName() + " разжгужается";
     }
 }

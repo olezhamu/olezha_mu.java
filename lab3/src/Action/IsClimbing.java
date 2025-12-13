@@ -24,7 +24,7 @@ public class IsClimbing extends Action{
     }
 
     @Override
-    public String getResult() {
+    public String toString() {
         return Human.getName() + " взбирается по " + Object + " на " + Surface;
     }
 }

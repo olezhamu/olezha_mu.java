@@ -91,7 +91,7 @@ public class IsLoading extends Action {
     }
 
     @Override
-    public String getResult() {
+    public String toString() {
         String s = Human.getName() + " грузит эти вещи: ";
         for (Item Item : ItemsToTransport){
             s += Item.getInfo() + "; ";

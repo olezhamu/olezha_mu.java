@@ -66,7 +66,7 @@ public class IsHolding extends Action {
     }
 
     @Override
-    public String getResult() {
+    public String toString() {
         String s = Human.getName() + " держит эти вещи: ";
         for (Item Item : ItemsToHold){
             s += Item.getInfo() + "; ";

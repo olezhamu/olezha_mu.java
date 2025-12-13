@@ -17,7 +17,7 @@ public abstract class Action {
         this.Boat = Boat;
     }
 
-    public abstract String getResult();
+    public abstract String toString();
 
     public void setWhatActionsAreDone(String WhatActionsAreDone) {
         this.WhatActionsAreDone += WhatActionsAreDone + "; ";

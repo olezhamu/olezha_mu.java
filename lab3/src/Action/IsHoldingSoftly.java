@@ -65,7 +65,7 @@ public class IsHoldingSoftly extends IsHolding {
     }
 
     @Override
-    public String getResult() {
+    public String toString() {
         String s = Human.getName() + " прихватил эти вещи: ";
         for (Item Item : ItemsToHold){
             s += Item.getInfo() + "; ";

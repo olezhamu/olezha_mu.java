@@ -6,11 +6,11 @@ public enum Weight {
     BIG("большой"),
     ENORMOUSE("очень большой");
 
-    private final String weight;
+    private final String Weight;
 
-    Weight(String weight){this.weight = weight;}
+    Weight(String Weight){this.Weight = Weight;}
 
     public String getWeight() {
-        return weight;
+        return Weight;
     }
 }

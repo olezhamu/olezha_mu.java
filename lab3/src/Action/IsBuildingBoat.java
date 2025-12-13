@@ -26,7 +26,7 @@ public class IsBuildingBoat extends Action{
     }
 
     @Override
-    public String getResult() {
+    public String toString() {
         String s = Human.getName() + " построил " + Name;
         return s;
     }

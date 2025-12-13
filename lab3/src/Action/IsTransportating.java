@@ -19,7 +19,7 @@ public class IsTransportating extends Action{
     }
 
     @Override
-    public String getResult() {
+    public String toString() {
         return Boat.getName() + " перевозит груз";
     }
 }
