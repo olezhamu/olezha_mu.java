@@ -7,11 +7,11 @@ public class Item {
     public String Volume;
     public String Weight;
 
-    public Item(String Name, String Volume, String Many, String Weight, String Material){
+    public Item(String Name, String Volume, String Many, Weight Weight, String Material){
         this.Name = Name;
         this.Volume = Volume;
         this.Many = Many;
-        this.Weight = Weight;
+        this.Weight = Weight.getWeight();
         this.Material = Material;
     }
 

@@ -3,7 +3,7 @@ package Item;
 public class Bag extends Item{
     public String NameWhatInside;
 
-    public Bag(String NameWhatInside, String Volume, String Many, String Weight, String Material) {
+    public Bag(String NameWhatInside, String Volume, String Many, Weight Weight, String Material) {
         super(NameWhatInside, Volume, Many, Weight, Material);
         this.NameWhatInside = NameWhatInside;
     }
